@@ -11,7 +11,6 @@ function crearItemPaginador(texto: string, url = '#') {
 
   return $item;
 }
-// e: {target: HTMLAnchorElement, preventDefault: () => {}} , callbackPaginaSeleccionada: (param: string | null) => {}
 export function manejarCambioPagina(
   e: {target: HTMLAnchorElement, preventDefault: () => {}}, 
   callbackPaginaSeleccionada = (param: string | number) => {}) {

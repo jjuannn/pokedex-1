@@ -6,10 +6,6 @@ import mostrarPokemon from './ui/pokemon.js';
 import obtenerParametrosDeURL from './utilidades/utilidades.js';
 
 async function cambiarPagina(pagina: number | string): Promise<void> {
-  // pagina : number o string
-  console.log(pagina)
-  console.log(typeof pagina)
-  console.log("asdasdasdas")
   const POKEMONES_POR_PAGINA = 20;
   let paginaActual;
   let offset;
