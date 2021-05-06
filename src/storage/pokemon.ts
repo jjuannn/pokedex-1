@@ -3,16 +3,16 @@ import Pokemon from "src/entidades/pokemon";
 
 export const LIMITE_POKEMONES = 20;
 
-function obtenerKeyPokemon(id: string) {
+function obtenerKeyPokemon(id: string): string {
   return `pokemon_${id}`;
 }
 
-function obtenerKeyPokemones(offset: number, limite: number) {
+function obtenerKeyPokemones(offset: number, limite: number): string {
   return `pokemones_${offset}_${limite}`;
 }
 
 
-export function cargarPokemon(id: string) {
+export function cargarPokemon(id: string): Pokemon {
   if (id === undefined) {
     throw new Error('Se necesita un identificador para cargar un pokemón');
   }

@@ -2,7 +2,7 @@ import Movimiento from 'src/entidades/movimiento.js';
 import Pokemon from 'src/entidades/pokemon.js';
 import { actualizarTextoAyuda } from './general.js';
 
-function mostrarTipos(tipos: Array<string>) {
+function mostrarTipos(tipos: Array<string>): void {
   const $tipos = document.querySelector('#tipos');
   $tipos!.innerHTML = '';
 
@@ -14,7 +14,7 @@ function mostrarTipos(tipos: Array<string>) {
   });
 }
 
-function mostrarMovimientos(movimientos: Array<Movimiento>) {
+function mostrarMovimientos(movimientos: Array<Movimiento>): void {
   const $movimientos = document.querySelector('#movimientos');
 
   movimientos.forEach((movimiento: Movimiento) => {
@@ -38,7 +38,7 @@ function mostrarMovimientos(movimientos: Array<Movimiento>) {
   });
 }
 
-function mostrarHabilidades(habilidades: Array<string>) {
+function mostrarHabilidades(habilidades: Array<string>): void {
   const $habilidades = document.querySelector('#habilidades');
   $habilidades!.innerHTML = '';
   habilidades.forEach((habilidad: string) => {
@@ -51,7 +51,7 @@ function mostrarHabilidades(habilidades: Array<string>) {
 }
 
 
-export default function mostrarPokemon(pokemon: Pokemon) {
+export default function mostrarPokemon(pokemon: Pokemon): void {
   const {
     id,
     nombre,

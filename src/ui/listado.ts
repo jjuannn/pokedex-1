@@ -3,7 +3,7 @@ export function actualizarTextoIndicePokemones(texto: string): void {
     $indice!.textContent = texto;
 }
 
-export function mostrarListadoPokemones(nombresPokemones: Array<string>, pokemonSeleccionadoCallback: (param: string) => {}) {
+export function mostrarListadoPokemones(nombresPokemones: Array<string>, pokemonSeleccionadoCallback: (param: string) => {}): void {
   const $indice = document.querySelector('#indice');
     $indice!.innerHTML = '';
 
