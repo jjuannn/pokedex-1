@@ -3,12 +3,12 @@ import Movimiento from "../entidades/movimiento.js";
 import ListadoPokemones from "../entidades/listadoPokemones.js";
 interface IDatosApi {
   // preguntar si esta bien usar la interface
-  abilities: object[];
+  abilities: {ability: { name: string}}[];
   id: number;
-  moves: object[];
+  moves: {move: { name: string}, version_group_details: {version_group: {name: string}}[]}[];
   name: string;
-  sprites: any; //  sprites: object; => no funciona no se xq
-  types: object[];
+  sprites: { front_default: string}; 
+  types: {type: { name: string}}[];
 }
 export function mapearPokemon(datosApi: IDatosApi) {
   const {
@@ -24,13 +24,13 @@ export function mapearPokemon(datosApi: IDatosApi) {
     id,
     nombre,
     fotoPrincipal,
-    habilidades.map((item: any) => item.ability.name), // preguntar aca lo mismo
-    tipos.map((item: any) => item.type.name), // preguntar aca lo mismo
+    habilidades.map((item) => item.ability.name), 
+    tipos.map((item) => item.type.name), 
     movimientos.map(
-      (item: any) => // preguntar aca lo mismo
+      (item) =>
         new Movimiento(
           item.move.name,
-          item.version_group_details.map((v: any) => v.version_group.name) // preguntar aca lo mismo
+          item.version_group_details.map((v) => v.version_group.name)
         )
     )
   );
