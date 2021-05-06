@@ -39,7 +39,7 @@ interface IInformacionPaginacion {
   count: number;
   next: string;
   previous: string;
-  results: Object[];
+  results: {name: string}[];
 }
 export function mapearListadoPokemones(datosApi: IInformacionPaginacion): ListadoPokemones {
   const {
@@ -53,6 +53,6 @@ export function mapearListadoPokemones(datosApi: IInformacionPaginacion): Listad
     total,
     siguienteUrl,
     anteriorUrl,
-    resultados.map((pokemon: any) => pokemon.name) // preguntar porque no puedo hacer pokemon: object
+    resultados.map((pokemon) => pokemon.name) // preguntar porque no puedo hacer pokemon: object
   );
 }
