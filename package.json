@@ -12,7 +12,7 @@
     "test:cypress:dev": "cypress open",
     "dev:watch": "tsc --watch",
     "dev": "run-p dev:watch serve",
-    "serve": "http-server -c-1"
+    "serve": "http-server -c-1 -p 8080"
   },
   "repository": {
     "type": "git",
