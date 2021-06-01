@@ -1,14 +1,8 @@
 import Pokemon from "../entidades/pokemon.js";
 import Movimiento from "../entidades/movimiento.js";
 import ListadoPokemones from "../entidades/listadoPokemones.js";
-interface IDatosApi {
-  abilities: {ability: { name: string}}[];
-  id: number;
-  moves: {move: { name: string}, version_group_details: {version_group: {name: string}}[]}[];
-  name: string;
-  sprites: { front_default: string}; 
-  types: {type: { name: string}}[];
-}
+import IDatosApi from "../interface/datosApi.js";
+import IPagina from "../interface/pagina.js";
 export function mapearPokemon(datosApi: IDatosApi): Pokemon {
   const {
     id,
@@ -23,8 +17,8 @@ export function mapearPokemon(datosApi: IDatosApi): Pokemon {
     id,
     nombre,
     fotoPrincipal,
-    habilidades.map((item) => item.ability.name), 
-    tipos.map((item) => item.type.name), 
+    habilidades.map((item) => item.ability.name),
+    tipos.map((item) => item.type.name),
     movimientos.map(
       (item) =>
         new Movimiento(
@@ -34,13 +28,8 @@ export function mapearPokemon(datosApi: IDatosApi): Pokemon {
     )
   );
 }
-interface IInformacionPaginacion {
-  count: number;
-  next: string;
-  previous: string;
-  results: {name: string}[];
-}
-export function mapearListadoPokemones(datosApi: IInformacionPaginacion): ListadoPokemones {
+
+export function mapearListadoPokemones(datosApi: IPagina): ListadoPokemones {
   const {
     count: total,
     next: siguienteUrl,

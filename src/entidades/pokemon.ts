@@ -7,12 +7,5 @@ export default class Pokemon {
     public habilidades: string[],
     public tipos: string[],
     public movimientos: Array<Movimiento> // preguntar sobre esta linea
-  ) {
-    this.id = id;
-    this.nombre = nombre;
-    this.foto = foto;
-    this.habilidades = habilidades;
-    this.tipos = tipos;
-    this.movimientos = movimientos;
-  }
+  ) {}
 }
